@@ -1,0 +1,9 @@
+node_modules
+assets
+src
+/resources
+sketch-assets
+package-lock.json
+webpack.skpm.config.js
+*.map
+.DS_Store

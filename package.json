@@ -1,0 +1,42 @@
+{
+  "name": "questai",
+  "version": "1.0.1",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "QuestAI",
+    "manifest": "src/manifest.json",
+    "main": "questai.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ],
+    "sketch-assets-file": "sketch-assets/icons.sketch"
+  },
+  "scripts": {
+    "build": "skpm-build && rimraf questai.sketchplugin/**/*.map",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@skpm/builder": "^0.7.4",
+    "@skpm/extract-loader": "^2.0.2",
+    "css-loader": "^3.2.0",
+    "html-loader": "^0.5.5"
+  },
+  "resources": [
+    "resources/**/*.js"
+  ],
+  "dependencies": {
+    "@babel/polyfill": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
+    "@skpm/fs": "^0.2.6",
+    "sketch-module-web-view": "^3.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuestAI/SketchPlugin.git"
+  }
+}

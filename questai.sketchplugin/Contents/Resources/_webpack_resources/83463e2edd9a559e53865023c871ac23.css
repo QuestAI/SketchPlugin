@@ -1,0 +1,395 @@
+/* some default styles to make the view more native like */
+
+html {
+  box-sizing: border-box;
+  background: transparent;
+
+  /* Prevent the page to be scrollable */
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  /* Force the default cursor, even on text */
+  cursor: default;
+}
+
+body {
+    /* TODO: define shared styles in body */
+    font-size: 12px;
+    color: #494949;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+hr {
+    border: 1px solid #d8d8d8;
+    border-left: none;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+label {
+    font: sans-serif;
+    color: #494949;
+    margin-bottom: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #2B99FF;
+}
+
+input, textarea {
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+
+li {
+    list-style: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 162px;
+    display: block;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    color: #494949;
+    height: 36px;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 4px;
+
+}
+
+.ab_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  /* Prevent the content from being selectionable */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.main_frame {
+    width: 220px;
+    margin-top: 28px;
+}
+
+#main {
+    margin-top: 16px;
+}
+
+#project_name {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.section {
+    padding: 0 28px;
+}
+
+.quest_for_sketch {
+    width: 205px;
+    margin-bottom: 16px;
+}
+
+#export_text {
+    width: 148px;
+}
+
+.btn {
+    width: 162px;
+    height: 33px;
+    text-align: center;
+    line-height: 1.5;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    border: none;
+    border-radius: 25px;
+}
+
+.quest_btn {
+    color: white;
+    font-size: 13px;
+    background-color: #2B99FF;
+}
+
+.quest_btn:hover,
+.quest_btn:focus {
+    background: rgb(26, 152, 255);
+}
+
+.quest_btn:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.quest_btn:active {
+    transform: scale(0.99);
+}
+
+.text-field {
+    width: 162px;
+    height: 33px;    
+    border-style:solid;
+    box-sizing: border-box;
+    border-color:#d8d8d8;
+    border-width: 1px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding-left: 4px;
+    text-align: left;
+    padding-left: 8px;
+}
+
+.text-field:disabled {
+    color: rgb(200, 200, 200);
+}
+
+.link {
+    color: #2B99FF;
+    cursor: pointer;
+}
+
+.login_link {
+    margin-top: 14px;
+}
+
+.loginLabels {
+    text-align: left;
+    justify-self: left;
+}
+
+.mainLabels {
+    text-align: left;
+    justify-self: left;
+}
+
+.largeLabels {
+    text-align: center;
+    align-self: center;
+    font-size: 18px;
+}
+
+.component_icon {
+    width: 18px;
+    height: auto;
+    margin-right: 8px;
+}
+.mobile_icon {
+   width: 12px;
+   height: auto;
+   margin-right: 8px; 
+}
+
+.desktop_tablet_icon {
+    width: 40px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.center_div {
+    text-align: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.fieldWithLabel {
+    display: flex;
+    flex-direction: column;
+}
+
+.headImage {
+    margin: 16px;
+}
+
+.styled-select select {
+    width: 162px;
+    height: 33px;
+    margin-top: 8px;
+    margin-bottom: 8px;    
+    border-style:solid;
+    box-sizing: border-box;
+    -webkit-appearance:none;
+    border-color:rgb(211,211,211);
+    border-width: 1px;
+    border-radius: 4px;
+    padding-left: 8px;
+    color:#494949;
+    font-size: 12px;
+    background-image:
+    linear-gradient(45deg, transparent 50%, black 50%),
+    linear-gradient(135deg, black 50%, transparent 50%);
+    background-position:
+    calc(100% - 16px) calc(1em + 2px),
+    calc(100% - 11px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+.styled-select select:disabled {
+    color: rgb(200, 200, 200);
+    background-image:
+    linear-gradient(45deg, transparent 50%, rgb(200,200,200) 50%),
+    linear-gradient(135deg, rgb(200,200,200) 50%, transparent 50%);
+}
+
+.export_head {
+    margin: 27px 16px 6px 16px;
+    font-size: 24px;
+    color: #494949
+}
+
+.select-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hint {
+    margin: 6px 7px 7px 0px;
+    color: #494949;
+    text-align: left;
+    font-size: 10px;
+}
+
+.export_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 13px 0px 16px 0px;
+}
+
+.artboard-name {
+    color:black;
+}
+.click_hint {
+    margin: 8px 0px 0px 0px;
+}
+
+.spinner {
+    width: 54px;
+    height: auto;
+    align-self: center;
+    margin: 28px;
+}
+
+.rotate {
+    animation: rotation 0.5s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.processMessage {
+    width: 152px;
+    align-self: center;
+    text-align: center;
+}
+
+.done_button_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 136px;
+    justify-content: space-evenly;
+}
+
+.black_frame_btn {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    font-weight: 600;
+}
+.black_frame_btn:hover
+.black_frame_btn:focus {
+    background-color: white;
+}
+
+.error {
+    font-size:10px; 
+    color: rgb(255,1,120); 
+    text-align: center;
+}
+
+.bottom_panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+}
+
+#last_sync_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#last_sync_proj_date {
+    margin-left: 4px;
+}
+
+.droplist {
+    background: none;
+    border-radius: 0px;
+    padding: 0px;
+    color: #494949;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    padding-left: 24px;
+}
+
+.droplist_icon{
+    position: absolute;
+    left: 8px;
+    top: 2px;
+    width: 10px;
+    height: auto;
+}
+.click_icon {
+    width: 14px;
+    height: auto;
+}
+
+.resource_link {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+

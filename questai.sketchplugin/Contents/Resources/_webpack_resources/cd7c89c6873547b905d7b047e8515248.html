@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>QuestAI</title>
+  <link rel="stylesheet" href="83463e2edd9a559e53865023c871ac23.css">
+</head>
+
+<body>
+  <div></div>
+  <div id="login" class="center_div main_frame" style="display: none;">
+    <div style="display:flex; flex-direction: column; justify-content:center; align-items:center; margin-bottom: 16px;">
+      <img src="758d064b859351e15a6d112c64406512.png" class="quest_for_sketch">
+      <img src="6f8ed8f92d86241c24b0bbe9155c14c7.png" id="export_text">
+    </div>
+
+    <div id="loginForm" class="loginForm">
+      <div class="fieldWithLabel">
+        <label class="loginLabels">Account / Email</label>
+        <input class="text-field" for="username" type="text" id="username" placeholder="Username">
+      </div>
+      <div class="fieldWithLabel" style="margin-top: 14px;">
+        <label class="loginLabels">Password</label>
+        <input class="text-field" for="password" type="password" id="password" placeholder="Password">
+      </div>
+      <div class="error" id="login_error" style="display: none; margin-top: 8px;">Invalid username or password
+      </div>
+    </div>
+    <button id="loginBtn" class="btn quest_btn" style="margin: 4px;"> Log In </button>
+    <div class="link login_link" style="margin-top: 22px;"><a href="https://www.quest.ai/pricing" target="_blank">Signup
+        for Free</a></div>
+    <div class="link login_link"><a href="https://app.quest.ai/platform/forgotPassword" target="_blank">Reset
+        Password</a>
+    </div>
+  </div>
+  <div id="main" class="center_div main_frame" style="display: none;">
+    <div class="export_head">
+      <span style="font-size: 18px; display: inline-flex;">
+        <img src="6be2ef0eb4d8261ce5b086bd69abdfb3.png" style="margin-right: 10px; width: 25px; height: auto;">
+        <div style="line-height: 1.4;">Export to Quest</div>
+      </span>
+    </div>
+    <div class="section">
+      <div class="select-div styled-select">
+        <select id="project_select"></select>
+        <select id="select_type">
+          <option id="type_website" value="website" selected>Single Webpage</option>
+          <option id="type_component" value="component">Component</option>
+        </select>
+
+        <input class="text-field" id="project_name" type="text">
+
+        <div id="component-hint" class="hint" style="display: none;">
+          Components are reuable across projects and must be 1 single artboard. <a href="https://www.quest.ai/docs"
+            target="_blank">Learn more</a>
+        </div>
+
+        <div id="page-hint" class="hint" style="display: none;">
+          Responsive web page for any device. <a href="https://www.quest.ai/docs?id=web-page-document-setup"
+            target="_blank">Learn more</a>
+        </div>
+      </div>
+
+      <div class="fieldWithLabel">
+        <div id="page_click_hint" class="hint click_hint" style="margin-top: 9px">
+          Shift select artboards you want to combine into a page.
+        </div>
+        <div id="component_click_hint" class="hint click_hint" style="margin-top: 9px">
+          Shift select one artboard that will become a component in Quest.
+        </div>
+        <label id="ab_select_label" class="mainLabels" style="margin-top: 8px; font-weight: 800;">Selected
+          Artboards:</label>
+        <div id="no_artboard" style="align-self: flex-start;">
+          < None>
+        </div>
+        <ul id='artboard_list' style="display: none">
+        </ul>
+        <ul style="display: none;">
+          <li id="sample_component_li"><img class="component_icon" src="429cdeef9b2aeb4ff9cd6a6a47d2b004.png"></li>
+          <li id="sample_desktop_li"><img class="desktop_tablet_icon" src="cc51b9c77c92a74ca2bb67ef5da3a39b.png"></li>
+          <li id="sample_mobile_li"><img class="mobile_icon" src="8f0ba7185df499a2e8f8c5d0a4a7ae70.png"></li>
+          <li id="sample_no_icon_li"></li>
+        </ul>
+      </div>
+      <div style="margin-top: 16px; margin-bottom: 16px;">
+        <div id="errorDiv" class="error" style="display: none; margin-bottom: 8px;"></div>
+        <button id="export_btn" class="btn quest_btn">Export</button>
+      </div>
+      <div class="bottom_panel">
+        <div id="last_sync_info" style="display: none">
+          <div class="link resource_link"><a href="" target="_blank" id="last_sync_proj_link">Last Synced:</a></div>
+          <div id="last_sync_proj_date"></div>
+        </div>
+        <div class="link resource_link"> <a href="https://www.quest.ai/docs" target="_blank">Docs</a></div>
+        <div class="link" id="logoutBtn" style="margin-top: 12px;"> Log Out </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="loading_div" class="center_div main_frame">
+    <div id="logging_out" style="display: none;">
+      <img src="758d064b859351e15a6d112c64406512.png" class="quest_for_sketch">
+      <div class="fieldWithLabel">
+        <lable class="largeLabels">Logging out</lable>
+        <img src="8f1f9a5ecdf8cf30b4977514f3002ac2.png" class="rotate spinner">
+      </div>
+    </div>
+    <div id="loading Page">
+      <img src="758d064b859351e15a6d112c64406512.png" class="quest_for_sketch">
+      <div class="fieldWithLabel">
+        <lable class="largeLabels">Loading</lable>
+        <img src="8f1f9a5ecdf8cf30b4977514f3002ac2.png" class="rotate spinner">
+      </div>
+    </div>
+    <div id="upload_status" style="display: none;">
+      <img src="758d064b859351e15a6d112c64406512.png" class="quest_for_sketch">
+      <div class="fieldWithLabel">
+        <lable class="largeLabels">Processing</lable>
+        <img src="8f1f9a5ecdf8cf30b4977514f3002ac2.png" class="rotate spinner">
+        <div class="processMessage">Exporting to Quest. This may take a few moments...</div>
+      </div>
+    </div>
+
+    <div id="done_upload" style="display: none;">
+      <img src="758d064b859351e15a6d112c64406512.png" class="quest_for_sketch">
+      <div class="fieldWithLabel">
+        <label class="largeLabels">Export successful!</label>
+        <div class="processMessage" style="width: 167px;">Your design was successfully exported to Quest.</div>
+      </div>
+      <div class="done_button_div">
+        <button id="back" class="btn black_frame_btn">Export Again</button>
+        <a id="view_link" href="" target="_blank"><button id="view" class="btn quest_btn">View in Quest</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- notice the "../resources_" here. It's because webview.js will be compiled in a different folder with the prefix. -->
+  <script src="../resources_webview.js"></script>
+</body>
+
+</html>
