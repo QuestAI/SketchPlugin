@@ -5,7 +5,10 @@
     "sketch": ">=3.0"
   },
   "skpm": {
-    "name": "QuestAI",
+    "name": "Quest AI",
+    "homepage": "https://www.quest.ai/sketch",
+    "description": "Convert Sketch to live websites instantly. Export artboards of different sizes and Quest automatically creates responsive pages. Using Quest AI’s no-code editor, you can add timeline-based actions, videos, music and animations to build rich and interactive experiences without writing any code. Build multi-page web sites, landing pages, demo modules, etc.  Add custom fonts, input fields, button components, custom methods or libraries easily. One-click build delivers responsive experience across all devices. Analytics and CDN hosting are built-in - so your experience is ready for your audience instantly.",
+    "author": "Quest AI",
     "manifest": "src/manifest.json",
     "main": "questai.sketchplugin",
     "assets": [
